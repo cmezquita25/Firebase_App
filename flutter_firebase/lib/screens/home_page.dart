@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase/app/domain/repositories/authentication_repository.dart';
+import 'package:flutter_firebase/app/ui/global_controllers/session_controller.dart';
 import 'package:flutter_firebase/app/ui/routes/routes.dart';
 import 'package:flutter_meedu/meedu.dart';
 import 'package:flutter_meedu/ui.dart';
-//import 'package:flutter_meedu/ui.dart' as router; //pendiente
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _HomeWidget extends State<HomeWidget> {
   static const List<Widget> _widgetOptions = <Widget>[
     //HOME
     Text(
-      'Welcome!',
+      'Home',
       style: optionStyle,
     ),
     //
@@ -48,22 +48,40 @@ class _HomeWidget extends State<HomeWidget> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff3C6DA5),
-        title: const Text("Welcome User"),
+        //title: const Text("Welcome User"),
       ),
 
       //Drawer
       drawer: Drawer(
         child: ListView(padding: EdgeInsets.zero, children: <Widget>[
-          const DrawerHeader(
-            decoration: BoxDecoration(
+          DrawerHeader(
+            decoration: const BoxDecoration(
               color: Color(0xff3C6DA5),
             ),
-            child: Text(
-              "Welcome",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Bienvenido",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Consumer(
+                  builder: (_, ref, __) {
+                    final user = ref.watch(sessionProvider).user!;
+                    return Text(
+                      "${user.displayName}",
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ),
 

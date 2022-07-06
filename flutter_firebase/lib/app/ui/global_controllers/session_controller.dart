@@ -21,4 +21,5 @@ class SessionController extends SimpleNotifier {
 
 final sessionProvider = SimpleProvider(
   (_) => SessionController(),
+  autoDispose: false,
 );
