@@ -14,11 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter FA',
       navigatorKey: router.navigatorKey,
       debugShowCheckedModeBanner: false,
-      //home: LoginPage(),
+      //home: HomePage(),
       initialRoute: Routes.SPLASH,
-      navigatorObservers: [
-        router.observer
-        ],
+      navigatorObservers: [router.observer],
       routes: appRoutes,
     );
   }

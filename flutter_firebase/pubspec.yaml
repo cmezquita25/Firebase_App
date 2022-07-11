@@ -48,6 +48,12 @@ dependencies:
   flutter_meedu: ^7.1.0
   freezed: ^2.0.3+1
   freezed_annotation: ^2.0.3
+  google_nav_bar: ^5.0.6
+  line_icons: ^2.0.1
+  cloud_firestore: ^3.2.1
+  responsive_grid_list: ^1.2.4
+  expansion_widget: ^0.0.3
+  group_list_view: ^1.1.1
   
   
 

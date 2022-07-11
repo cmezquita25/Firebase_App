@@ -8,7 +8,7 @@ import 'package:flutter_firebase/screens/sign_in_page.dart';
 
 Map<String, Widget Function(BuildContext)> get appRoutes => {
       Routes.SPLASH: (_) => const SplashPage(),
-      Routes.LOGIN: (_) =>  const LoginPage(),
-      Routes.HOME: (_) => const HomeWidget(),
+      Routes.LOGIN: (_) => const LoginPage(),
+      Routes.HOME: (_) => const HomePage(),
       Routes.REGISTER: (_) => const Sign_In_Page(),
     };
